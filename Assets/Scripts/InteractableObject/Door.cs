@@ -13,13 +13,13 @@ public class Door : InteractableObject
 
     protected override void Start()
     {
-        base.Start();                       
+        base.Start();                       //기존 상속 받은 스타트 함수를 한번 실행 시킨다. 
         objectName = "문";
         interactionText = "[E] 문 열기";
         interactionType = InteractionType.Builing;
 
         closedPosition = transform.position;
-        openPosition = closedPosition + Vector3.right * 3f;               
+        openPosition = closedPosition + Vector3.right * 3f;                 //오른쪽으로 3미터 이동
 
     }
 
@@ -27,7 +27,7 @@ public class Door : InteractableObject
     {
         isOpen = !isOpen;
         if (isOpen)
-        {
+        {           
             interactionText = "[E] 문 닫기";
             StartCoroutine(MoveDoor(openPosition));
         }
@@ -40,7 +40,7 @@ public class Door : InteractableObject
 
     IEnumerator MoveDoor(Vector3 targetPosition)
     {
-        while (Vector3.Distance(transform.position, targetPosition) > 0.1f)
+        while (Vector3.Distance(transform.position , targetPosition) > 0.1f)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, openSpeed * Time.deltaTime);
             yield return null;

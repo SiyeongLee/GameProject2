@@ -6,7 +6,7 @@ public class PlayerStats : MonoBehaviour
 {
     public int maxHealth = 100;                             //최대 체력
     public int currentHealth = 100;                         //현재 체력
-
+        
     // Start is called before the first frame update
     void Start()
     {
@@ -22,10 +22,10 @@ public class PlayerStats : MonoBehaviour
         }
         Debug.Log("현재 체력 : " + currentHealth);
     }
-
+    
     public void TakeDamage(int amount)
     {
-        if (amount > 0)
+        if(amount > 0)
         {
             currentHealth -= amount;
         }
@@ -33,8 +33,8 @@ public class PlayerStats : MonoBehaviour
         {
             currentHealth += amount;
         }
-
-        if (currentHealth <= 0)
+          
+        if ( currentHealth <= 0)
         {
             currentHealth = 0;
             Debug.Log("사망");

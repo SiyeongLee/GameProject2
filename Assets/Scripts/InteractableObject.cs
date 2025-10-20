@@ -7,7 +7,7 @@ public class InteractableObject : MonoBehaviour
     [Header("상호작용 정보")]
     public string objectName = "아이템 ";
     public string interactionText = "[E] 상호작용";
-    public InteractionType interactionType = InteractionType.Item;                
+    public InteractionType interactionType = InteractionType.Item;                  //타입은 우선 Item
 
     [Header("하이라이트 설정")]
     public Color highlightColor = Color.yellow;
@@ -19,23 +19,23 @@ public class InteractableObject : MonoBehaviour
 
     public enum InteractionType
     {
-        Item,                      
-        Machine,                   
-        Builing,                    
-        NPC,                       
-        Collectible                
+        Item,                       //아이템 (동전, 열쇠 등)
+        Machine,                    //기계 (레버 ,버튼 등)
+        Builing,                    //건물 (문, 상자 등)
+        NPC,                        //NPC
+        Collectible                 //수집품
     }
 
-
+  
     protected virtual void Start()
     {
-        objectRenderer = GetComponent<Renderer>();
-        if (objectRenderer != null)
+        objectRenderer = GetComponent<Renderer>();  
+        if(objectRenderer != null)
         {
             originalColor = objectRenderer.material.color;
         }
 
-        gameObject.layer = 8;           
+        gameObject.layer = 8;           //(Layer 8 = Interactable 로 가정)
     }
 
     public virtual void OnPlayerEnter()
@@ -76,7 +76,7 @@ public class InteractableObject : MonoBehaviour
         return interactionText;
     }
 
-    protected virtual void HighlightObject()                                            
+    protected virtual void HighlightObject()                                            //가상 함수로 하이라이트 구현 
     {
         if (objectRenderer != null && !isHighlighted)
         {
@@ -86,7 +86,7 @@ public class InteractableObject : MonoBehaviour
         }
     }
 
-    protected virtual void RemoveHighlight()                                           
+    protected virtual void RemoveHighlight()                                            //가상 함수로 하이라이트 제거 구현 
     {
         if (objectRenderer != null && isHighlighted)
         {

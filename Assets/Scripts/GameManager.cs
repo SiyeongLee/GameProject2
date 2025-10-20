@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        if (Instance == null)
+        if(Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);          //씬 전환 시에도 유지
@@ -39,11 +39,11 @@ public class GameManager : MonoBehaviour
 
     void UpdateUI()
     {
-        if (scoreText != null)
+        if(scoreText != null)
         {
             scoreText.text = "점수 : " + playerScore;
         }
-        if (itemCountText != null)
+        if(itemCountText != null)
         {
             itemCountText.text = "아이템 : " + itemsCollected + "개";
         }

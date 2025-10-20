@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28a99e5d9afae6c47ad72ee0690dd4c2, type: 3}
+  m_Script: {fileID: 11500000, guid: 16a7e703842e0d546bbbb059ceeef29b, type: 3}
   m_Name: Quest_003
   m_EditorClassIdentifier: 
   questTitle: "\uC0C8\uB85C\uC6B4 \uD018\uC2A4\uD2B8"
